@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arogunmasa Abayomi</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="/hamburgers-master/dist/hamburgers.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <div class="header__container container">
+      <div class="header__container">
         <nav class="header__nav">
           <div class="logo">
-            <span class="logo-img">Logo</span>
+            <img src="/assets/logo.svg" alt="" />
           </div>
           <div class="nav__links">
             <ul class="nav__list">
@@ -31,68 +32,111 @@
                 <a href="#" class="nav__link link">Contact</a>
               </li>
             </ul>
-
-            <a href="#" class="cta__btn" download="">
-              <span class="cta__btn-text"> Let's Talk </span>
-              <div class="cta__btn-svg-bg">
-                <div class="cta__btn-svg">
-                  <img src="/assets/arrow-right.svg" alt="" />
-                </div>
-              </div>
+          </div>
+          <div class="nav__sub-link">
+            <a href="#" class="cta__btn nav__btn nav__btn-mobile" download="">
+              <span class="cta__btn-text"> Resume </span>
+            </a>
+            <button
+              class="hamburger hamburger--elastic is-active"
+              type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+          <div class="nav__links-desktop">
+            <ul class="nav__list-desktop">
+              <li class="nav__item-desktop">
+                <a href="#" class="nav__link-desktop link__active">Home</a>
+              </li>
+              <li class="nav__item-desktop">
+                <a href="#" class="nav__link-desktop link">About me</a>
+              </li>
+              <li class="nav__item-desktop">
+                <a href="#" class="nav__link-desktop link">Skills</a>
+              </li>
+              <li class="nav__item-desktop">
+                <a href="#" class="nav__link-desktop link">Projects</a>
+              </li>
+              <li class="nav__item-desktop">
+                <a href="#" class="nav__link-desktop link">Contact</a>
+              </li>
+            </ul>
+            <a href="#" class="cta__btn nav__btn nav__btn-desktop" download="">
+              <span class="cta__btn-text"> Resume </span>
             </a>
           </div>
         </nav>
       </div>
     </header>
 
-    <div class="main-wrapper">
-      <main class="divider">
+    <main class="main-wrapper">
+      <div class="divider">
         <section class="hero">
+          <div class="circle"></div>
           <div class="container hero__container">
-            <h4>Hello! I am Abayomi</h4>
-            <div class="slider">
-              <h1>I build <span>web experiences</span> that inspire.</h1>
-            </div>
-            <p class="body-copy">
-              I am a passionate web developer dedicated to effective and
-              innovative web solutions. With a kin eye for detail and a passion
-              for staying up-to-date with the latest technologies, I create
-              websites and web experiences that drive results
-            </p>
-            <a href="#" class="cta__btn"
-              ><span class="cta__btn-text"> Let's Talk </span>
-              <div class="cta__btn-svg-bg">
-                <div class="cta__btn-svg">
-                  <img src="/assets/arrow-right.svg" alt="" />
-                </div>
+            <div>
+              <h4 class="sub-title">Hello! I am Abayomi</h4>
+              <div class="slider">
+                <h1>I build <span>web experiences</span> that inspire.</h1>
               </div>
-            </a>
+              <p class="body-copy">
+                I am a passionate web developer dedicated to effective and
+                innovative web solutions. With a kin eye for detail and a
+                passion for staying up-to-date with the latest technologies, I
+                create websites and web experiences that drive results
+              </p>
+              <a href="#" class="cta cta__btn"
+                ><span class="cta__btn-text"> Let's Talk </span>
+              </a>
+            </div>
           </div>
         </section>
-        <section class="hero">
-          <div class="container hero__container">
-            <h4>Hello! I am Abayomi</h4>
-            <div class="slider">
-              <h1>I build <span>web experiences</span> that inspire.</h1>
-            </div>
-            <p class="body-copy">
-              I am a passionate web developer dedicated to effective and
-              innovative web solutions. With a kin eye for detail and a passion
-              for staying up-to-date with the latest technologies, I create
-              websites and web experiences that drive results
-            </p>
-            <a href="#" class="cta__btn"
-              ><span class="cta__btn-text"> Let's Talk </span>
-              <div class="cta__btn-svg-bg">
-                <div class="cta__btn-svg">
-                  <img src="/assets/arrow-right.svg" alt="" />
+        <section class="about">
+          <div class="container about__container">
+            <div class="about__content-bg">
+              <h3 class="sub-title">About Me</h3>
+              <div class="about__content">
+                <div class="about__content-left">
+                  <p class="body-copy about__copy">
+                    My name is <span>Arogunmasa Abayomi</span>, I got introduced
+                    to Web Development through a course in 2017 when I was at
+                    school. The course and my passion for building products with
+                    the skills that I'll have learned sparked my interest is
+                    Tech. I started learning in 2021 with the help of a friend,
+                    and since then, I never stopped learning.
+                  </p>
+                  <p class="body-copy">
+                    I have built projects which include, but not limited to:
+                    Calculator, a Landing Page, and have had a lot of setbacks.
+                    I will continue learning as I'm looking forward to building
+                    real problem-solving products, solidifying my knowledge in
+                    these technologies and more, God willing.
+                  </p>
+                  <p class="body-copy">
+                    Here are the technologies I've beent working with recently:
+                  </p>
+                  <ul class="stack-list">
+                    <li class="stack-item">HTML5</li>
+                    <li class="stack-item">CSS3</li>
+                    <li class="stack-item">TailwindCSS</li>
+                    <li class="stack-item">JavaScript (ES6+)</li>
+                    <li class="stack-item">React</li>
+                  </ul>
+                </div>
+                <div class="about__img-bg">
+                  <img
+                    src="/assets/qwerqu-mcbrew-r77qkPGkIRc-unsplash.jpg"
+                    alt=""
+                    class="about__img" />
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </main>
 
     <script src="index.js"></script>
   </body>
