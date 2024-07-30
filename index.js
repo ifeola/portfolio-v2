@@ -23,6 +23,7 @@ year.textContent = whatYear;
 // Nav Link Active
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll(".nav__link-desktop");
+let mobileLinks = document.querySelectorAll(".nav__link");
 
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
@@ -35,6 +36,12 @@ window.addEventListener("scroll", () => {
         link.classList.remove("active-link");
         document
           .querySelector(".nav__link-desktop[href*=" + id + "]")
+          .classList.add("active-link");
+      });
+      mobileLinks.forEach((link) => {
+        link.classList.remove("active-link");
+        document
+          .querySelector(".nav__link[href*=" + id + "]")
           .classList.add("active-link");
       });
     }
