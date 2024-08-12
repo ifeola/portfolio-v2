@@ -330,8 +330,10 @@ header {
   position: fixed;
   right: -100%;
   top: 0;
-  width: 88%;
+  bottom: 0;
+  width: 80%;
   height: 100dvh;
+  height: 100svh;
   background-color: var(--secondary-color);
   z-index: 10;
   display: flex;
@@ -736,16 +738,14 @@ h1 {
 .project__item {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: 24rem auto;
-  /* container-type: inline-size; */
+  grid-template-rows: 24rem auto;
   grid-auto-flow: dense;
 }
 
 .project {
   display: grid;
-  grid-row: span 2;
-  /* grid-template-columns: 1fr; */
   grid-template-rows: subgrid;
+  grid-row: span 2;
   border: 1px solid var(--white-transparent);
   transform: translateY(0);
   transition: transform var(--transition-duration) var(--transition-timing);
