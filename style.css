@@ -2,7 +2,7 @@
   --secondary-color: #0c0c0c;
   --secondary-transparent-color: rgba(0, 7, 3, 0.5);
   --primary-color: #00fc69;
-  --primary-transparent-color: rgba(0, 252, 105, 0.219);
+  --primary-transparent-color: #00fc6938;
   --primary-transparent-bg-color: rgba(0, 252, 105, 0.039);
   --white-color: #ffffff;
   --white-low: rgba(255, 255, 255, 0.226);
@@ -740,9 +740,14 @@ h1 {
   grid-template-columns: 1fr;
   grid-template-rows: 24rem auto;
   grid-auto-flow: dense;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .project {
+  border-radius: 10px;
+
+  overflow: hidden;
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 2;
@@ -846,24 +851,21 @@ h1 {
 
 .skills__list {
   width: 100%;
-  display: flex;
-  align-items: center;
-  row-gap: 4rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 4rem;
   margin-block-start: 2.4rem;
-}
-
-.skills__list > * {
-  flex-basis: calc(100% / 2);
 }
 
 .skill__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* text-align: center; */
   gap: 2.4rem;
+  background-color: var(--primary-transparent-color);
+  padding-block: 2em;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
 
   img {
     width: 4rem;
