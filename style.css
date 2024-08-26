@@ -6,7 +6,7 @@
   --primary-transparent-bg-color: rgba(0, 252, 105, 0.039);
   --white-color: #ffffff;
   --white-low: rgba(255, 255, 255, 0.226);
-  --white-transparent: rgba(255, 255, 255, 0.126);
+  --white-transparent: rgba(255, 255, 255, 0.1);
   --offwhite-color: #cecece;
 
   --bricolage-medium: bricolage-grotesque-medium, system-ui, -apple-system,
@@ -173,6 +173,7 @@ section {
 
 section + section {
   border-top: 1px solid var(--white-low);
+  border-top-style: dashed;
 }
 
 .cta__btn {
@@ -230,6 +231,8 @@ section + section {
   font-size: 1.4rem;
   font-weight: 600;
   position: relative;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 
   &::before {
     content: "";
@@ -282,6 +285,27 @@ section + section {
   }
 }
 
+.diamond {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--white-transparent);
+  border: 1px solid var(--white-low);
+  transform: rotate(45deg);
+  z-index: 100;
+  bottom: -0.6rem;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.diamond-left {
+  left: -0.6rem;
+}
+
+.diamond-right {
+  right: -0.6rem;
+}
+
 /* Header */
 
 header {
@@ -296,19 +320,28 @@ header {
   width: 100%;
   background-color: var(--secondary-color);
   border-bottom: 1px solid var(--white-low);
+  border-bottom-style: dashed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 999;
   backdrop-filter: blur(10px);
   -ms-backdrop-filter: blur(10px);
   transition: background-color 300ms ease;
+  padding-inline: 1.6rem;
 }
 
 .header__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-inline: 1px solid var(--white-low);
+  border-inline-style: dashed;
   width: 100%;
   padding-inline: 1.6rem;
   margin: 0 auto;
+  position: relative;
 }
 
 .scroll {
@@ -316,6 +349,7 @@ header {
 }
 
 .header__nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -449,13 +483,6 @@ header {
   transform: rotate(90deg);
 }
 
-@media (width >= 425px) {
-  .header__container {
-    width: 88%;
-    max-width: 1440px;
-  }
-}
-
 /* SUb Link */
 
 .nav__sub-link {
@@ -489,6 +516,11 @@ header {
 }
 
 @media (width >= 768px) {
+  .header__container {
+    width: 88%;
+    max-width: 1440px;
+  }
+
   .nav__links,
   .nav__sub-link {
     display: none;
@@ -508,12 +540,15 @@ header {
   max-width: 1440px;
   margin: 0 auto;
   margin-block-start: 8rem;
+  padding-inline: 1.6rem;
 }
 
 .divider {
   width: 100%;
-  border: none;
+  border-inline: 1px solid var(--white-low);
+  border-inline-style: dashed;
   margin: 0 auto;
+  position: relative;
 }
 
 .container {
@@ -526,10 +561,9 @@ header {
   justify-content: center;
 }
 
-@media (width >= 425px) {
+@media (width >=768px) {
   .divider {
     width: 88%;
-    border-inline: 1px solid var(--white-low);
   }
 
   .container {
@@ -603,7 +637,21 @@ section {
   border-radius: 100%;
   animation: bounce 2500ms infinite forwards;
   opacity: 1;
+  z-index: 0;
+}
+
+.grid-box {
+  position: absolute;
+  pointer-events: none;
   z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--white-transparent);
+  stroke: var(--white-transparent);
+  -webkit-mask-image: linear-gradient(180deg, #ffffffad, transparent);
+  mask-image: linear-gradient(180deg, #ffffffad, transparent);
+  opacity: 0.5;
 }
 
 @keyframes bounce {
@@ -645,6 +693,10 @@ h1 {
 }
 
 /* About */
+
+#about {
+  position: relative;
+}
 
 .about__content-bg {
   width: 100%;
@@ -725,6 +777,10 @@ h1 {
 }
 
 /* Projects */
+#projects {
+  position: relative;
+}
+
 .projects__content {
   padding-block-start: 1.2rem;
 }
@@ -742,11 +798,12 @@ h1 {
   grid-auto-flow: dense;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .project {
   border-radius: 10px;
-
   overflow: hidden;
   display: grid;
   grid-template-rows: subgrid;
@@ -845,6 +902,10 @@ h1 {
 }
 
 /* Skills */
+#skills {
+  position: relative;
+}
+
 .skills__content {
   width: 100%;
 }
@@ -862,9 +923,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-  background-color: var(--primary-transparent-color);
+  background-color: var(--white-transparent);
   padding-block: 2em;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--white-low);
   border-radius: 10px;
 
   img {
@@ -887,16 +948,23 @@ h1 {
   }
 }
 
+/* Contact */
+#contact {
+  position: relative;
+}
+
 /* Footer */
 
 footer {
   border-top: 1px solid var(--white-low);
+  border-top-style: dashed;
 }
 
 .footer__container {
   max-width: 1440px;
   margin: 0 auto;
   padding-block: 2.4rem;
+  padding-inline: 1.6rem;
 }
 
 .footer__items {
