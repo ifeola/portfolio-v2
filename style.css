@@ -1,12 +1,12 @@
 :root {
   --secondary-color: #0c0c0c;
-  --secondary-transparent-color: rgba(0, 7, 3, 0.5);
+  --secondary-transparent-color: #00070380;
   --primary-color: #00fc69;
   --primary-transparent-color: #00fc6938;
   --primary-transparent-bg-color: rgba(0, 252, 105, 0.039);
   --white-color: #ffffff;
-  --white-low: rgba(255, 255, 255, 0.226);
-  --white-transparent: rgba(255, 255, 255, 0.1);
+  --white-low: #ffffff3a;
+  --white-transparent: hsla(0, 0%, 100%, 0.102);
   --offwhite-color: #c2c2c2;
 
   --bricolage-medium: bricolage-grotesque-medium, system-ui, -apple-system,
@@ -923,9 +923,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-  background-color: var(--white-transparent);
+  /* background-color: var(--white-transparent); */
   padding-block: 2em;
-  border: 1px solid var(--white-low);
+  border: 1px solid var(--white-transparent);
   border-radius: 10px;
 
   img {
