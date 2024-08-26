@@ -6,7 +6,7 @@
   --primary-transparent-bg-color: rgba(0, 252, 105, 0.039);
   --white-color: #ffffff;
   --white-low: #ffffff3a;
-  --white-transparent: hsla(0, 0%, 100%, 0.16);
+  --white-transparent: hsla(0, 0%, 100%, 0.14);
   --offwhite-color: #c2c2c2;
 
   --Switzer-medium: Switzer-medium, system-ui, -apple-system, BlinkMacSystemFont,
@@ -280,7 +280,7 @@ section + section {
   border: 1px solid var(--primary-color);
   transform: rotate(45deg);
   z-index: 100;
-  bottom: -0.6rem;
+  bottom: -0.4rem;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
