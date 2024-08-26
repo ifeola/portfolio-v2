@@ -6,21 +6,18 @@
   --primary-transparent-bg-color: rgba(0, 252, 105, 0.039);
   --white-color: #ffffff;
   --white-low: #ffffff3a;
-  --white-transparent: hsla(0, 0%, 100%, 0.102);
+  --white-transparent: hsla(0, 0%, 100%, 0.16);
   --offwhite-color: #c2c2c2;
 
-  --bricolage-medium: bricolage-grotesque-medium, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
-  --ppmori-regular: ppmori-regular, system-ui, -apple-system, BlinkMacSystemFont,
+  --Switzer-medium: Switzer-medium, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-  --bricolage-bold: bricolage-grotesque-bold, system-ui, -apple-system,
+  --Switzer-regular: Switzer-regular, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
-  --ppmori-semibold: ppmori-semibold, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+  --Switzer-bold: Switzer-bold, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 
   --h1-fz: 8rem;
   --h2-fz: 4.8rem;
@@ -51,36 +48,26 @@
 }
 
 @font-face {
-  font-family: "bricolage-grotesque-bold";
-  src: url("/assets/fonts/bricolage-grotesque-bold-webfont.woff2")
-      format("woff2"),
-    url("/assets/fonts/bricolage-grotesque-bold-webfont.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "bricolage-grotesque-medium";
-  src: url("/assets/fonts/bricolage-grotesque-medium-webfont.woff2")
-      format("woff2"),
-    url("/assets/fonts/bricolage-grotesque-medium-webfont.woff") format("woff");
+  font-family: "Switzer-bold";
+  src: url("/assets/fonts/Switzer-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Switzer-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ppmori-regular";
-  src: url("/assets/fonts/ppmori-regular-webfont.woff2") format("woff2"),
-    url("/assets/fonts/ppmori-regular-webfont.woff") format("woff");
-  font-weight: 400;
+  font-family: "Switzer-medium";
+  src: url("/assets/fonts/Switzer-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Switzer-Medium.woff2") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ppmori-semibold";
-  src: url("/assets/fonts/ppmori-semibold-webfont.woff2") format("woff2"),
-    url("/assets/fonts/ppmori-semibold-webfont.woff") format("woff");
-  font-weight: 500;
+  font-family: "Switzer-regular";
+  src: url("/assets/fonts/Switzer-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Switzer-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -91,7 +78,7 @@ html {
 }
 
 body {
-  font-family: var(--ppmori-regular);
+  font-family: var(--Switzer-regular);
   font-size: var(--body-mobile-copy);
   line-height: 1.7;
   background-color: var(--secondary-color);
@@ -105,13 +92,13 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
-  font-family: var(--bricolage-bold);
+  font-family: var(--Switzer-bold);
 }
 
 .body-copy {
   max-width: 56ch;
   margin-block-end: 2.4rem;
-  font-family: var(--ppmori-regular);
+  font-family: var(--Switzer-regular);
 }
 
 h1 {
@@ -158,7 +145,7 @@ a {
   text-decoration: none;
   display: inline-flex;
   color: var(--offwhite-color);
-  font-family: var(--bricolage-medium);
+  font-family: var(--Switzer-medium);
   font-size: var(--link-fz);
   font-weight: 500;
 }
@@ -189,7 +176,7 @@ section + section {
   border-radius: 100vw;
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-family: var(--bricolage-medium);
+  font-family: var(--Switzer-medium);
   line-height: 1;
   transition: box-shadow var(--transition-duration) var(--transition-timing);
 
@@ -287,8 +274,8 @@ section + section {
 
 .diamond {
   position: absolute;
-  width: 1rem;
-  height: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
   transform: rotate(45deg);
@@ -299,11 +286,11 @@ section + section {
 }
 
 .diamond-left {
-  left: -0.5rem;
+  left: -0.4rem;
 }
 
 .diamond-right {
-  right: -0.5rem;
+  right: -0.4rem;
 }
 
 /* Header */
@@ -328,7 +315,7 @@ header {
   backdrop-filter: blur(10px);
   -ms-backdrop-filter: blur(10px);
   transition: background-color 300ms ease;
-  padding-inline: 1.6rem;
+  padding-inline: 1rem;
 }
 
 .header__container {
@@ -358,6 +345,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  width: 3.2rem;
 }
 
 .nav__links {
@@ -417,14 +405,14 @@ header {
 .hamburger-box {
   display: flex;
   align-items: center;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   position: relative;
 }
 
 .hamburger-inner {
   position: absolute;
-  top: 6px;
+  top: 4px;
   display: inline-block;
   width: 80%;
   height: 2px;
@@ -509,13 +497,20 @@ header {
   background-color: var(--hover);
 }
 
-.logo {
-  font-size: var(--h4-fz);
-  color: var(--offwhite-color);
-  font-weight: 500;
+.nav__btn.resume {
+  padding-inline: 2rem;
+  height: 3.6rem;
 }
 
 @media (width >= 768px) {
+  .logo {
+    width: auto;
+  }
+
+  .header {
+    padding-inline: 0;
+  }
+
   .header__container {
     width: 88%;
     max-width: 1440px;
@@ -540,7 +535,7 @@ header {
   max-width: 1440px;
   margin: 0 auto;
   margin-block-start: 8rem;
-  padding-inline: 1.6rem;
+  padding-inline: 1rem;
 }
 
 .divider {
@@ -562,6 +557,10 @@ header {
 }
 
 @media (width >=768px) {
+  .main-wrapper {
+    padding-inline: 0;
+  }
+
   .divider {
     width: 88%;
   }
@@ -716,7 +715,7 @@ h1 {
 
 .about__copy span {
   color: var(--white-color);
-  font-size: 2rem;
+  font-size: inherit;
   font-weight: 600;
 }
 
@@ -855,7 +854,7 @@ h1 {
 
 .project__technologies {
   /* text-transform: uppercase; */
-  font-family: var(--bricolage-medium);
+  font-family: var(--Switzer-medium);
   display: flex;
   gap: 0.4rem;
   font-weight: 600;
@@ -914,7 +913,7 @@ h1 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 4rem;
+  gap: 2.4rem;
   margin-block-start: 2.4rem;
 }
 
@@ -934,13 +933,17 @@ h1 {
 
   span {
     font-size: 1.4rem;
-    font-family: var(--bricolage-bold);
+    font-family: var(--Switzer-bold);
   }
 }
 
 @media (width >= 768px) {
   .skills__list > * {
     flex-basis: calc(100% / 3);
+  }
+
+  .skills__list {
+    gap: 4rem;
   }
 
   .skill__item img {
@@ -958,9 +961,11 @@ h1 {
 footer {
   border-top: 1px solid var(--primary-transparent-color);
   border-top-style: dashed;
+  padding-inline: 1rem;
 }
 
 .footer__container {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding-block: 2.4rem;
@@ -970,7 +975,7 @@ footer {
 .footer__items {
   width: 100%;
   font-size: 1.2rem;
-  font-family: var(--bricolage-medium);
+  font-family: var(--Switzer-medium);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -978,6 +983,10 @@ footer {
 }
 
 @media (width >= 768px) {
+  footer {
+    padding-inline: 0;
+  }
+
   .footer__items {
     font-size: 1.4rem;
   }
