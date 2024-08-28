@@ -1,5 +1,6 @@
 const header = document.querySelector("header");
-const menuBtn = document.querySelector(".hamburger");
+const bodyMenu = document.querySelector(".body-hamburger");
+const headerMenu = document.querySelector(".header-hamburger");
 
 //Window Scroll
 window.addEventListener("scroll", () => {
@@ -7,11 +8,21 @@ window.addEventListener("scroll", () => {
 });
 
 // Menu Button
-menuBtn.addEventListener("click", () => {
-  if (menuBtn.getAttribute("aria-expanded") == "false") {
-    menuBtn.setAttribute("aria-expanded", "true");
+headerMenu.addEventListener("click", () => {
+  if (headerMenu.getAttribute("aria-expanded") == "false") {
+    headerMenu.setAttribute("aria-expanded", "true");
+    bodyMenu.setAttribute("aria-expanded", "true");
   } else {
-    menuBtn.setAttribute("aria-expanded", "false");
+    headerMenu.setAttribute("aria-expanded", "true");
+  }
+});
+
+bodyMenu.addEventListener("click", () => {
+  if (bodyMenu.getAttribute("aria-expanded") == "false") {
+    bodyMenu.setAttribute("aria-expanded", "true");
+  } else {
+    bodyMenu.setAttribute("aria-expanded", "false");
+    headerMenu.setAttribute("aria-expanded", "false");
   }
 });
 
