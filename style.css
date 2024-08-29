@@ -1,21 +1,22 @@
 :root {
-  --green: 145, 100%, 49%;
-  --yellow: 180, 100%, 49%;
-  --bg: 0, 0%, 5%;
-  --white: 0, 0%, 100%;
+  --green: 145, 100%, 32%;
+  --yellow: 180, 100%, 32%;
+  --bg: 0, 0%, 96%;
+  --white: 0, 0%, 10%;
 
   --primary-color: hsla(var(--green), 1);
   --accent-color: hsla(var(--yellow), 1);
   --bg-color: hsla(var(--bg), 1);
-  --text-color: hsl(0, 0%, 76%);
+  --text-color: hsl(0, 0%, 28%);
   --white-color: hsla(var(--white), 1);
 
   /* Transparent */
   --primary-transparent-2: hsla(var(--green), 0.2);
   --primary-transparent-3: hsla(var(--green), 0.3);
   --accent-transparent: hsla(var(--yellow), 0.2);
+  --accent-transparent-6: hsla(var(--yellow), 0.6);
   --bg-transparent-5: hsla(var(--bg), 0.5);
-  --white-transparent: hsla(var(--white), 0.14);
+  --white-transparent: hsla(var(--white), 0.1);
   --white-transparent-24: hsla(var(--white), 0.24);
 
   --Switzer-medium: Switzer-medium, system-ui, -apple-system, BlinkMacSystemFont,
@@ -48,54 +49,26 @@
   --transition-timing: ease;
 }
 
-.light-mode {
+.dark-mode {
   --green: 145, 100%, 32%;
   --yellow: 180, 100%, 32%;
-  --bg: 0, 0%, 96%;
-  --white: 0, 0%, 10%;
+  --bg: 0, 0%, 5%;
+  --white: 0, 0%, 100%;
 
   --primary-color: hsla(var(--green), 1);
   --accent-color: hsla(var(--yellow), 1);
   --bg-color: hsla(var(--bg), 1);
-  --text-color: hsl(0, 0%, 28%);
+  --text-color: hsl(0, 0%, 76%);
   --white-color: hsla(var(--white), 1);
 
   /* Transparent */
   --primary-transparent-2: hsla(var(--green), 0.2);
   --primary-transparent-3: hsla(var(--green), 0.3);
   --accent-transparent: hsla(var(--yellow), 0.2);
+  --accent-transparent-6: hsla(var(--yellow), 0.6);
   --bg-transparent-5: hsla(var(--bg), 0.5);
-  --white-transparent: hsla(var(--white), 0.1);
+  --white-transparent: hsla(var(--white), 0.14);
   --white-transparent-24: hsla(var(--white), 0.24);
-}
-
-.light-dark-mode {
-  background: none;
-  border: none;
-  outline: none;
-  height: 4.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  .dark-mode {
-    fill: var(--accent-color);
-    display: none;
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .light-mode {
-    fill: var(--accent-color);
-    display: none;
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .active-theme {
-    display: block;
-  }
 }
 
 *,
@@ -235,7 +208,6 @@ section + section {
   border-radius: 100vw;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: var(--bg-color);
-  font-family: var(--Switzer-medium);
   line-height: 1;
   transition: opacity var(--transition-duration) var(--transition-timing);
 
@@ -324,15 +296,8 @@ section + section {
   justify-content: center;
   cursor: pointer;
 
-  .dark-mode {
-    fill: var(--accent-color);
-    display: none;
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  .light-mode {
-    fill: var(--accent-color);
+  svg {
+    fill: var(--primary-color);
     display: none;
     width: 2.4rem;
     height: 2.4rem;
@@ -372,10 +337,6 @@ section + section {
 
   .theme-toggle {
     order: 2;
-  }
-
-  .resume {
-    order: 1;
   }
 }
 
@@ -789,11 +750,10 @@ section {
   inset: 0;
   width: 100%;
   height: 100%;
-  fill: var(--accent-transparent);
   stroke: var(--accent-transparent);
   -webkit-mask-image: linear-gradient(180deg, #ffffffad, transparent);
   mask-image: linear-gradient(180deg, #ffffffad, transparent);
-  opacity: 0.5;
+  opacity: 0.56;
 }
 
 @keyframes bounce {
@@ -949,7 +909,7 @@ h1 {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 2;
-  border: 1px solid var(--white-transparent);
+  border: 2px solid var(--white-transparent);
   transform: translateY(0);
   transition: transform var(--transition-duration) var(--transition-timing);
 }
@@ -997,7 +957,6 @@ h1 {
 
 .project__technologies {
   /* text-transform: uppercase; */
-  font-family: var(--Switzer-medium);
   display: flex;
   gap: 0.4rem;
   font-weight: 600;
@@ -1008,7 +967,7 @@ h1 {
     background-color: var(--white-transparent);
     border: 1px solid var(--white-low);
     border-radius: 100vw;
-    color: var(--accent-color);
+    color: var(--accent-transparent-6);
   }
 }
 
@@ -1066,7 +1025,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-  /* background-color: var(--white-transparent); */
   padding-block: 2em;
   border: 1px solid var(--white-transparent);
   border-radius: 10px;
@@ -1112,7 +1070,8 @@ h1 {
   right: 8%;
   z-index: 1000;
   opacity: 0;
-  transition: bottom var(--transition-duration) var(--transition-timing),
+  scale: 0.1;
+  transition: scale var(--transition-duration) var(--transition-timing),
     opacity var(--transition-duration) var(--transition-timing);
 
   .top-btn {
@@ -1137,7 +1096,7 @@ h1 {
 
 .active-top {
   opacity: 1;
-  bottom: 10%;
+  scale: 1;
 
   .top-btn {
     pointer-events: visible;
@@ -1163,7 +1122,6 @@ footer {
 .footer__items {
   width: 100%;
   font-size: 1.2rem;
-  font-family: var(--Switzer-medium);
   display: flex;
   align-items: center;
   justify-content: space-between;

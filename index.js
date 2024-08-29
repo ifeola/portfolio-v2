@@ -46,11 +46,9 @@ const logoImageOne = document.querySelector(".logo-image-1");
 const logoImageTwo = document.querySelector(".logo-image-2");
 
 darkLightBtn.addEventListener("click", () => {
-  document.documentElement.classList.toggle("light-mode");
+  document.documentElement.classList.toggle("dark-mode");
   lightBtn.classList.toggle("active-theme");
   darkBtn.classList.toggle("active-theme");
-  logoImageOne.classList.toggle("active-logo");
-  logoImageTwo.classList.toggle("active-logo");
 });
 
 window.addEventListener("scroll", () => {
