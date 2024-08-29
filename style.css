@@ -841,7 +841,7 @@ h1 {
 }
 
 .about__img-bg {
-  max-height: 48rem;
+  height: 48rem;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -851,6 +851,8 @@ h1 {
   position: absolute;
   content: "";
   inset: 0;
+  height: 100%;
+  width: 100%;
   background-color: var(--primary-transparent-2);
 }
 
