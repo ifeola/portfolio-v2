@@ -1,10 +1,12 @@
 const header = document.querySelector("header");
 const bodyMenu = document.querySelector(".body-hamburger");
 const headerMenu = document.querySelector(".header-hamburger");
+const topBtn = document.querySelector(".top");
 
 //Window Scroll
 window.addEventListener("scroll", () => {
   header.classList.toggle("scroll", window.scrollY);
+  topBtn.classList.toggle("active-top", window.scrollY > 1200);
 });
 
 // Menu Button
@@ -36,6 +38,21 @@ let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll(".nav__link-desktop");
 let mobileLinks = document.querySelectorAll(".nav__link");
 
+// Change theme colours
+const darkLightBtn = document.querySelector(".light-dark-mode");
+const lightBtn = document.querySelector(".light-mode");
+const darkBtn = document.querySelector(".dark-mode");
+const logoImageOne = document.querySelector(".logo-image-1");
+const logoImageTwo = document.querySelector(".logo-image-2");
+
+darkLightBtn.addEventListener("click", () => {
+  document.documentElement.classList.toggle("light-mode");
+  lightBtn.classList.toggle("active-theme");
+  darkBtn.classList.toggle("active-theme");
+  logoImageOne.classList.toggle("active-logo");
+  logoImageTwo.classList.toggle("active-logo");
+});
+
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     let top = window.scrollY;
@@ -58,3 +75,5 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+let scrollPosition = window.scrollY;
